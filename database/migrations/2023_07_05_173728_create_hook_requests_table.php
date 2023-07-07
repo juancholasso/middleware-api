@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('hook_requests', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("client_id");
             $table->unsignedBigInteger("id_hook_identifier")->nullable();
             $table->longText("payload")->nullable();
             $table->timestamp("hook_received_date");
@@ -24,6 +25,11 @@ return new class extends Migration
             $table->integer("api_attempt")->default(1);
             $table->timestamp("api_request_date", $precision = 0)->nullable();
             $table->timestamps();
+
+            $table->foreign('client_id')->references('id')->on('clients')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
         });
     }
 
