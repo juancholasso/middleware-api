@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('hook_key');
+            $table->string('hook_key')->nullable();
             $table->string('zkong_account');
             $table->string('zkong_password');
             $table->string('zkong_attr_category');
