@@ -10,6 +10,7 @@ class HookRequest extends Model
     use HasFactory;
 
     protected $fillable = [
+        "client_id",
         "id_hook_identifier",
         "payload",
         "hook_received_date",
