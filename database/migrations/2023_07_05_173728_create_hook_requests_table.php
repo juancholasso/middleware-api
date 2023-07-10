@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger("client_id");
             $table->unsignedBigInteger("id_hook_identifier")->nullable();
-            $table->longText("payload")->nullable();
+            $table->json("payload")->nullable();
             $table->timestamp("hook_received_date");
             $table->boolean("api_success")->default(false);
             $table->integer("api_status")->nullable();

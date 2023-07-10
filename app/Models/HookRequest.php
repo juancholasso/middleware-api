@@ -20,4 +20,13 @@ class HookRequest extends Model
         "api_attempt",
         "api_request_date"
     ];
+
+     /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'payload' => 'array'
+    ];
 }

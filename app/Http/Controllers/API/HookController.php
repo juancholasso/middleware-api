@@ -22,7 +22,7 @@ class HookController extends Controller
 
         $hookRequest = HookRequest::create([
             'client_id' => $client->id,
-            "payload" => json_encode($request->all()),
+            "payload" => $request->post(),
             "hook_received_date" => now(),
         ]);
 
